@@ -1,9 +1,8 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import de.hef.nhoffmann.crypto.util.DidacticUtil;
+import de.hef.nhoffmann.hackerorg.util.crypto.DidacticUtil;
 
 /**
  * @author Nils Hoffmann

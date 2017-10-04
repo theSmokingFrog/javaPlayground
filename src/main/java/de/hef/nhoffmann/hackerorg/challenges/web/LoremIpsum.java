@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.web.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.web;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class LoremIpsum
         Map<String, Long> result = new HashMap<>();
 
         try (
-                InputStream loremInputStream = Object.class.getResourceAsStream("/text/lorem.txt");
+                InputStream loremInputStream = Object.class.getResourceAsStream("/hackerorg/text/lorem.txt");
                 InputStreamReader loremISR = new InputStreamReader(loremInputStream);
                 BufferedReader loremBR = new BufferedReader(loremISR))
         {

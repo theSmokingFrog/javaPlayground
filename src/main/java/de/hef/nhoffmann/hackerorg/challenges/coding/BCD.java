@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.coding.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.coding;
 
 import java.util.Arrays;
 

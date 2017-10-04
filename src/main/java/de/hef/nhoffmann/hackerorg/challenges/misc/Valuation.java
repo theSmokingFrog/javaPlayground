@@ -1,6 +1,4 @@
-package de.hef.nhoffmann.misc;
-
-import java.util.LinkedList;
+package de.hef.nhoffmann.hackerorg.challenges.misc;
 
 /**
  * @author Nils Hoffmann

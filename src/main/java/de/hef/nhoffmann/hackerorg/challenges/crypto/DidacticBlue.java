@@ -1,12 +1,9 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -18,7 +15,7 @@ public class DidacticBlue
 {
     public static void main(String[] args) throws IOException
     {
-        InputStream picture = Object.class.getResourceAsStream("/images/didacticBlue.png");
+        InputStream picture = Object.class.getResourceAsStream("/hackerorg/images/didacticBlue.png");
         final BufferedImage img = ImageIO.read(picture);
 
         // Fetches the blue values from the image

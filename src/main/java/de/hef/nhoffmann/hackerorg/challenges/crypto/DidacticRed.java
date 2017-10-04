@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
 import java.awt.image.Raster;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class DidacticRed
 
     public static void main(String[] args) throws IOException
     {
-        InputStream picture = Object.class.getResourceAsStream("/images/didacticRed.png");
+        InputStream picture = Object.class.getResourceAsStream("/hackerorg/images/didacticRed.png");
         final Raster imageData = ImageIO.read(picture).getData();
 
         for (int x = 0; x < 4; x++)

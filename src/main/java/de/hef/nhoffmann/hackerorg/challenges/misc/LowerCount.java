@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.misc;
+package de.hef.nhoffmann.hackerorg.challenges.misc;
 
 /**
  * @author Nils Hoffmann

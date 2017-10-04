@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,7 +29,7 @@ public class DidacticRGB
 
     public static void main(String[] args) throws IOException
     {
-        InputStream picture = Object.class.getResourceAsStream("/images/didacticRGB.png");
+        InputStream picture = Object.class.getResourceAsStream("/hackerorg/images/didacticRGB.png");
 
         for (int i : ImageIO.read(picture).getData().getPixel(0,0, new int[3]))
         {

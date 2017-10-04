@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.coding.util;
+package de.hef.nhoffmann.hackerorg.util.coding;
 
 /**
  * @author Nils Hoffmann

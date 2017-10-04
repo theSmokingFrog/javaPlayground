@@ -1,6 +1,6 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
-import de.hef.nhoffmann.crypto.util.MorseUtil;
+import de.hef.nhoffmann.hackerorg.util.crypto.MorseUtil;
 
 /**
  * @author Nils Hoffmann

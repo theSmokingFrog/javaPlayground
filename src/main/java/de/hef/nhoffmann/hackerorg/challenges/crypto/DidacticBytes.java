@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.crypto.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.crypto;
 
 import java.nio.ByteBuffer;
 

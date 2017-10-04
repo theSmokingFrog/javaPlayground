@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.coding.challenges;
+package de.hef.nhoffmann.hackerorg.challenges.coding;
 
 /**
  * @author Nils Hoffmann
@@ -10,14 +10,24 @@ public class RandomProblem
     {
         for (int i = Integer.MIN_VALUE; i < Integer.MAX_VALUE; i++)
         {
-            bucketFromRandom(i);
+            try
+            {
+                bucketFromRandom(i);
+            }
+            catch (ArrayIndexOutOfBoundsException pEx)
+            {
+                System.out.println("Solution Value found: " + i);
+            }
         }
     }
 
-    public static int bucketFromRandom(int randomNumber) {
-        int a[]	= new int[10];
+    private static int bucketFromRandom(int randomNumber)
+    {
+        int a[] = new int[10];
         for (int i = 0; i < a.length; i++)
+        {
             a[i] = i * randomNumber;
+        }
         int index = Math.abs(randomNumber) % a.length;
         return a[index];
     }
