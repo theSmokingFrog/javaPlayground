@@ -1,4 +1,4 @@
-package de.hef.nhoffmann.playground;
+package de.hef.nhoffmann.various;
 
 import java.util.Arrays;
 
