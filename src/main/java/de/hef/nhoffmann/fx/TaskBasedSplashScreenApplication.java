@@ -40,15 +40,16 @@ public class TaskBasedSplashScreenApplication extends Application
 
     public static void main(String[] args) throws Exception
     {
+        System.out.println("call: main()");
         launch(args);
     }
 
     @Override
     public void init()
     {
-        ImageView splash = new ImageView(new Image(
-                SPLASH_IMAGE
-        ));
+        System.out.println("call: init()");
+        // actually prepares splashLayout and all childs for displaying
+        ImageView splash = new ImageView(new Image(SPLASH_IMAGE));
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(SPLASH_WIDTH - 20);
         progressText = new Label("Will find friends for peanuts . . .");
@@ -72,11 +73,13 @@ public class TaskBasedSplashScreenApplication extends Application
     @Override
     public void start(final Stage initStage) throws Exception
     {
-        final Task<ObservableList<String>> friendTask = new Task<ObservableList<String>>()
+        System.out.println("call: start()");
+        final Task<ObservableList<String>> friendTask = new Task<ObservableList<String>>() // <- Task that get's started at the end of this method
         {
             @Override
             protected ObservableList<String> call() throws InterruptedException
             {
+                System.out.println("call: call()");
                 ObservableList<String> foundFriends = FXCollections.observableArrayList();
                 ObservableList<String> availableFriends = FXCollections
                         .observableArrayList("Fili", "Kili", "Oin", "Gloin", "Thorin", "Dwalin", "Balin", "Bifur", "Bofur", "Bombur", "Dori", "Nori", "Ori");
@@ -103,6 +106,7 @@ public class TaskBasedSplashScreenApplication extends Application
 
     private void showMainStage(ReadOnlyObjectProperty<ObservableList<String>> friends)
     {
+        System.out.println("call: showMainStage()");
         final Stage mainStage = new Stage(StageStyle.DECORATED);
         mainStage.setTitle("My Friends");
         mainStage.getIcons().add(new Image(APPLICATION_ICON));
@@ -116,11 +120,13 @@ public class TaskBasedSplashScreenApplication extends Application
 
     private void showSplash(final Stage initStage, Task<?> task, InitCompletionHandler initCompletionHandler)
     {
+        System.out.println("call: showSplash()");
         progressText.textProperty().bind(task.messageProperty());
         loadProgress.progressProperty().bind(task.progressProperty());
-        task.stateProperty().addListener((observableValue, oldState, newState) -> {
+        task.stateProperty().addListener((observableValue, oldState, newState) -> { // <- this is getting called when the task is finished
             if (newState == Worker.State.SUCCEEDED)
             {
+                System.out.println("action: fadeSplash");
                 loadProgress.progressProperty().unbind();
                 loadProgress.setProgress(1);
                 initStage.toFront();
@@ -130,10 +136,11 @@ public class TaskBasedSplashScreenApplication extends Application
                 fadeSplash.setOnFinished(actionEvent -> initStage.hide());
                 fadeSplash.play();
 
-                initCompletionHandler.complete();
+                initCompletionHandler.complete(); // calls whatever is supplied by the parameter
             } // todo add code to gracefully handle other task states.
         });
 
+        // Code shows the SplashScreen
         Scene splashScene = new Scene(splashLayout, Color.TRANSPARENT);
         final Rectangle2D bounds = Screen.getPrimary().getBounds();
         initStage.setScene(splashScene);
